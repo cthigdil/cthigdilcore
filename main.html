@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    Add the desired product by pressing the respective button.
+</head>
+
+<body>
+    <div id="button_container"></div>
+
+    <script>
+        function create_buttons(product_name){
+            var button = document.createElement("button");
+            button.setAttribute("id", product_name);
+            button.innerHTML = product_name;
+            document.getElementById("button_container").appendChild(button)
+
+            var newline = document.createElement("br");
+            document.getElementById("button_container").appendChild(newline)
+            
+        }
+
+        function paste_buttons(){
+            for (let i = 97; i<=122; i++){
+                let character = String.fromCharCode(i);
+                create_buttons(character);
+            }
+        }
+
+        paste_buttons();
+    </script>
+</body>
+</html>
